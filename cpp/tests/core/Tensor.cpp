@@ -3129,7 +3129,7 @@ TEST_P(TensorPermuteDevices, ReduceMean) {
     EXPECT_TRUE(std::isnan(dst.ToFlatVector<float>()[0]));
 }
 
-TEST_P(TensorPermuteDevices, ToDLPackFromDLPack) {
+TEST_P(TensorPermuteDevicesWithSYCL, ToDLPackFromDLPack) {
     core::Device device = GetParam();
     core::Tensor src_t = core::Tensor::Init<float>(
             {{{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}},
